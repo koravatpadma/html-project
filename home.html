@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    <title>E-Learning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family:Serif;
+        }
+        .top-header {
+            background-color: white;
+            height: auto;
+            min-width: 100%;
+        }
+        header {
+            min-width: 100vw;
+            background-color: transparent;
+        }
+        header nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 100px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .logo-img {
+            height: 90px;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(79, 78, 78);
+            font-weight: 600;
+            font-size: 18px;
+            transition: 0.4s ease-in-out;
+        }
+        nav ul li a:hover {
+            color: black;
+        }
+        .btn {
+            background-color: greenyellow;
+            padding: 10px 25px;
+            border-radius: 30px;
+            color: black;
+            transition: 0.4s ease-in-out;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: rgb(112, 216, 112);
+        }
+        .hero-section {
+            min-width: 100w;
+        }
+        .hero-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 40px 100px;
+        }
+        .left-box {
+            margin-left: 40px;
+            padding: 50px 0;
+        }
+        .started {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .ready {
+            color: lightgreen;
+            margin-bottom: 8px;
+            font-weight: 550;
+        }
+        .left-box h1 {
+            font-size: 34px;
+            margin-bottom: 8px;
+            line-height: 44px;
+        }
+        span {
+            color: lightgreen;
+        }
+        .left-para {
+            margin-bottom: 25px;
+        }
+        .right-img {
+            width: 500px;
+        }
+      
+        .course-top {
+            padding: 0 0 100px 0;
+        }
+        .online-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px;
+            color: white;
+        }
+        .online-courses {
+            background-color: white;
+            height: auto;
+            padding: 0 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .online-courses img {
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: 200px;
+            height: 150px;
+        }
+        .online-box {
+            background-color: white;
+            padding: 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgb(89, 151, 148), 2px 2px 5px rgb(71, 134, 134);
+            transition: 0.3s ease-in-out;
+        }
+        .online-box:hover {
+            box-shadow: 0px 5px 15px #3a6781;
+            cursor: pointer;
+        }
+        .online-box h2 {
+            font-size: 18px;
+            color: rgb(49 48, 48);
+            margin: 5px 0;
+        }
+        .online-box p {
+            color: rgb(99, 99, 99);
+            margin: 5px 0;
+        }
+        .course-btn {
+            font-size: 14px;
+            color: white;
+            padding: 8px 20px;
+            margin: 7px 0;
+        }
+      
+        .testimonial {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 100px;
+            padding-bottom: 100px;
+        }
+        .test-title {
+            color: #4e8044;
+            padding-bottom: 40px;
+        }
+        .testimonial-box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 200px;
+            background-color: rgb(38, 138, 113);
+            border-color: #1a2b58;
+        }
+        .testimonial-box img {
+            margin-right: 30px;
+            border: 1px solid rgb(36, 139, 58);
+        }
+        .testimonial-box p {
+            font-weight: 550;
+            color:black;
+        }
+       
+        footer {
+            height: 60vh;
+            background-color: #33941a;
+            padding: 0 100px 100px 0;
+        }
+        .footer-box {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            padding: 1opx 30px;
+        }
+        .footer-about {
+            width: 40%;
+            color: wheat;
+            margin-left: 120px;
+        }
+        .footer-links h3 {
+            margin-bottom: 10px;
+            color: rgb(19, 17, 19);
+            font-size: 17px;
+        }
+        .footer-links a {
+            color: rgb(11, 11, 11);
+            text-decoration: none;
+            margin: 6px 0;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 550;
+            transition: 0.3s ease-in-out;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .end {
+            text-align: center;
+            color: wheat;
+        }
+        
+        .csec {
+            background: #21ff33;
+            background-attachment: fixed;
+            position: absolute;
+            width: 100%;
+            height: 250px;
+            top: 200px;
+            content: '';
+            transform-origin: top right;
+            transform: skewY(-17deg);
+            z-index: -1;
+        }
+        .back-contact {
+            margin-top: 0px;
+            transform: translateY(-50px);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .cc {
+            height: 400px;
+            width: 400px;
+            height: 500px;
+            border-radius: 10px;
+            justify-content: center;
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.4);
+            background: #fff;
+        }
+        .cc form {
+            margin: 5%;
+            margin-top: 40px;
+            width: 90%;
+            height: 90%;
+        }
+        .cc form label {
+            position: absolute;
+            color: #2E3D49;
+            font-size: 10px;
+            font-weight: 800;
+        }
+        .cc form input {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 5px lightgray;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            outline: none;
+            color: #2E3D49;
+            font-weight: 600;
+        }
+        .imp {
+            color: #388d38;
+        }
+        form textarea {
+            width: 100%;
+            height: 100px;
+            box-shadow: inset 0 0 5px lightgray;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            outline: none;
+            color: rgb(70, 121, 65);
+            font-weight: 600;
+            padding: 15px;
+        }
+        #csubmit {
+            margin-top: 20px;
+            background: #0e8155;
+            border-radius: 5px;
+            border-style: none;
+            outline: none;
+            width: 100%;
+            padding: 15px 25px;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .diffSection {
+            width: 100%;
+          
+            justify-content: center;
+            align-items: center;
+        }
+        .diffSection .content {
+            margin: 10px;
+            text-align: center;
+            padding: 10px 100px;
+            font-size: 1.1em;
+        }
+      
+        .title {
+            margin-top: 0px;
+            font-family: cursive;
+            font-size: 30px;
+            text-align: center;
+            color: #2E3D49;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a href="/home">
+        <div class="top-header" id="home">
+            <header>
+                <nav>
+                    <div class="logo">
+                        <img src="https://thumbs.dreamstime.com/b/e-learning-logo-editable-vector-eps-146228936.jpg"
+                            alt="logo" class="logo-img">
+                    </div>
+                    <ul>
+                        <li><a href="#home"><b>Home</b></a></li>
+                        <li><a href="#courses"><b>Courses</b></a></li>
+                        <li><a href="#others"><b>About Us</b></a></li>
+                      
+                        <li><a href="/signUp" class="btn">Sign Up</a></li>
+                        <li><a href="/signIn" class="btn">Log In</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="hero-section">
+                <div class="hero-box">
+                    <div class="left-box">
+                        <h1 class="ready">Are you ready to learn?</h1>
+                       
+                        <img class="left-para" src="https://www.ispringsolutions.com/blog/wp-content/uploads/editor/2021/12/ispring-blog-image-1640603987.svg" >
+                       
+                    </div>
+                    <div class="right-box">
+                        <img src="https://tse4.mm.bing.net/th?id=OIP.hPAA3IxffjVbwPofWBKjCwHaEO&pid=Api&P=0"
+                            alt="header image" class="right-img">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+      
+        <div class="course-top" id="courses">
+            <div class="online-title">
+                <h2>Online Courses</h2>
+            </div>
+            <section class="online-courses">
+                <div class="online-box">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.5d8UVfgws59CnTxVoYQplwHaIe&pid=Api&P=0" alt=""
+                        style="height: fix-content;">
+                    <h2>C</h2>
+                    <p>Programming</p>
+                    <a href="https://www.javatpoint.com/c-programming-language-tutorial" class="btn started course">Start Course</a>
+
+                </div>
+                <div class="online-box">
+                    <img src="https://e7.pngegg.com/pngimages/46/626/png-clipart-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template.png" alt="">
+                    <h2>C++</h2>
+                    <p>Programming</p>
+                    <a href="https://www.javatpoint.com/cpp-tutorial" class="btn started course">Start Course</a>
+
+                </div>
+                <div class="online-box">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP._1rRK1kdLzTITw_KQkT8YQHaGL&pid=Api&P=0" alt="">
+                    <h2>Python</h2>
+                    <p>Programming</p>
+                    <a href="https://www.javatpoint.com/python-tutorial" class="btn started course">Start Course</a>
+
+                </div>
+
+              
+            </section>
+            <br><br>
+            <section class="online-courses">
+                <div class="online-box">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.vRIaCcMm78HO4pwTsXiWqAHaFP&pid=Api&P=0" alt="">
+                    <h2>Java</h2>
+                    <p>Programming</p>
+                    <a href="https://www.javatpoint.com/java-tutorial" class="btn started course">Start Course</a>
+
+                </div>
+                <div class="online-box">
+                    <img src="http://www.snti.in/images/ds-card.png"
+                        alt="">
+                    <h2>Data structures</h2>
+                    <p>Introduction</p>
+                    <a href="https://www.geeksforgeeks.org/data-structures/" class="btn started course">Start Course</a>
+
+                </div>
+                <div class="online-box">
+                    <img src="https://w7.pngwing.com/pngs/170/924/png-transparent-microsoft-sql-server-microsoft-azure-sql-database-microsoft-text-logo-microsoft-azure-thumbnail.png" alt="">
+                    <h2>SQL</h2>
+                    <p>Query Language</p>
+                    <a href="https://www.javatpoint.com/sql-tutorial" class="btn started course">Start Course</a>
+
+                </div>
+               
+            </section>
+            <br><br>
+            <section class="online-courses">
+                <div class="online-box">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.Ax3mc9JLu0i_d019ig20YQHaFI&pid=Api&P=0" alt=""
+                        style="height: fix-content;">
+                    <h2>HTML & CSS</h2>
+                    <p>Web Develoment</p>
+                    <a href="https://www.w3schools.com/html/"
+                        class="btn started course">Start Course</a>
+
+                </div>
+
+                <div class="online-box">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.PHBTJoshbg880IH9z_PB6QHaHa&pid=Api&P=0" alt="">
+                    <h2>JavaScript</h2>
+                    <p>Web Develoment</p>
+                    <a href="https://www.w3schools.com/js/DEFAULT.asp" class="btn started course">Start Course</a>
+
+                </div>
+
+                <div class="online-box">
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.qduYp2SiO-G0Xnh4kZyQ-QHaDn&pid=Api&P=0" alt="">
+                    <h2>Full Stack <br> Web Development</h2>
+                    <p>Web Develoment</p>
+                    <a href="https://www.simplilearn.com/free-online-full-stack-development-course-skillup"
+                        class="btn started course">Start Course</a>
+
+                </div>
+            </section>
+            <section class="online-courses">
+                <div class="online-box">
+                    <img src="https://thumbs.dreamstime.com/z/machine-learning-round-flat-concept-illustration-machine-learning-round-flat-concept-illustration-symbol-white-background-114032112.jpg"
+                        alt="">
+                    <h2>Machine Learning</h2>
+                    <p>With python</p>
+                    <a href="https://www.javatpoint.com/machine-learning" class="btn started course">Start
+                        Course</a>
+
+                </div>
+
+                <div class="online-box">
+                    <img src="https://img.freepik.com/free-vector/cloud-computing-logo-design-data-storage-network-technology-logotype_126523-2789.jpg?w=2000"
+                        alt="">
+                    <h2>Cloud</h2>
+                    <p>Computing</p>
+                    <a href="https://www.javatpoint.com/cloud-computing-tutorial" class="btn started course">Start
+                        Course</a>
+
+                </div>
+               
+
+                <div class="online-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA1U9q4DwhmWtVnjEqovSmTzdCdWCJLINAIA&usqp=CAU"
+                        alt="">
+                    <h2>Ethical Hacking</h2>
+                    <p>Hacking</p>
+                    <a href="https://www.javatpoint.com/ethical-hacking-tutorial" class="btn started course">Start Course</a>
+
+                </div>
+
+               
+            </section>
+            <br><br>
+            
+
+        </div>
+
+
+
+
+
+
+     
+        <footer>
+            <div class="footer-box" id="footer">
+                <div class="footer-links footer-about">
+                    <p>
+                    <h1>E-Learning</h1>
+                    </p><br><br>
+                    <img src="https://tse1.mm.bing.net/th?id=OIP.kWp3n9Pp_k7r-JvndgD_LAHaHb&pid=Api&P=0"
+                        style="height: 100px; width: 100px ">
+                </div>
+                <div class="footer-links">
+                    <h3>
+                        E-learning
+                    </h3>
+
+                    <a href="#home">Home</a>
+                    <a href="#courses">Online courses</a>
+                    <a href="#contactus_section">Contact Us</a>
+                    <a href="#others">Testimonials</a>
+                </div>
+
+                <div class="footer-links">
+                    <h3>
+                        Support
+                    </h3>
+                    <a href="#home">Legal Policy</a>
+                    <a href="#home">Status Policy</a>
+                    <a href="#home">Privacy Policy</a>
+                    <a href="#home">Terms of service</a>
+
+                </div>
+
+
+            </div>
+            <p class="end"><b>Copyright &copy; E-learning BVRITH</b></p>
+        </footer>
+    </a>
+</body>
+
+</html>
